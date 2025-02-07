@@ -23,7 +23,7 @@ public class RestApiController {
     /**
      * Display all of the Digimon: Name, image url, and Level
      *
-     * @param the url.
+     * param not needed url.
      * @return the JSON list showcasing all information about the Digimon.
      */
     //Heavy inspiration from the Brewery example we were provided as the Assignment mentioned.
@@ -62,7 +62,7 @@ public class RestApiController {
     /**
      * Get one Digimon by name
      *
-     * @param name the unique Digimon
+     * @param mon the (name of the Digimon)
      * @return the Digimon.
      * add to HashMap
      */
@@ -91,6 +91,25 @@ public class RestApiController {
                 //Put the digimon into the HashMap
                 searchedMon.put(mon, digimon);
                 return digimon;
+
+            /**
+             * The response from the above API is a JSON array that looks like this:
+             * <pre>
+             *     {
+             *     "bukamon": {
+             *         "name": "Bukamon",
+             *         "image": "https://digimon.shadowsmith.com/img/bukamon.jpg",
+             *         "level": "In Training"
+             *     },
+             *     "Yokomon": {
+             *         "name": "Yokomon",
+             *         "image": "https://digimon.shadowsmith.com/img/yokomon.jpg",
+             *         "level": "In Training"
+             *     }
+             * }
+             * </pre>
+             * I know this because I TESTED THE API IN POSTMAN!!!
+             */
 
 
         } catch (JsonProcessingException ex) {
