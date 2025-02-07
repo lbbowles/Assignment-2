@@ -20,6 +20,12 @@ public class RestApiController {
     //HashMap used for last function of displaying the searched for Digimon
     Map<String, Digimon> searchedMon = new HashMap<>();
 
+    /**
+     * Display all of the Digimon: Name, image url, and Level
+     *
+     * @param the url.
+     * @return the JSON list showcasing all information about the Digimon.
+     */
     //Heavy inspiration from the Brewery example we were provided as the Assignment mentioned.
     @GetMapping("/digi")
     public Object getDigimon() {
@@ -53,6 +59,13 @@ public class RestApiController {
     }
 
 
+    /**
+     * Get one Digimon by name
+     *
+     * @param name the unique Digimon
+     * @return the Digimon.
+     * add to HashMap
+     */
 //Instead of displaying the whole list, search for and display a single digimon based on the name.  Store it in HashMap.
     @GetMapping("/digi/{mon}")
     public Object getDigimons(@PathVariable String mon) {
